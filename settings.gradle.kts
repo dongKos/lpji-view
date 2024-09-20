@@ -5,9 +5,7 @@ rootProject.name = "lpjiview"
 
 include("bootstrap:api-server")
 include("common:core")
-include("domain:authentication")
 
-include("domain:user:interface")
-include("domain:user:service")
-include("domain:user:infrastructure")
-include("domain:user:domain")
+include("domain:user")
+include("domain:authentication")
+findProject(":domain:authentication")?.name = "authentication"

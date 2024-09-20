@@ -1,0 +1,38 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mysql://localhost:13306/lpji_local?serverTimeZone=Asia/Seoul&useLegacyDatetimeCode=false&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#  flyway:
+#    enabled: false
+#    baseline-on-migrate: true
+#    url: jdbc:mysql://localhost:13306/lpji_local?serverTimeZone=Asia/Seoul&useLegacyDatetimeCode=false&characterEncoding=UTF-8
+#    user: root
+#    password: root
+#    locations: classpath:db/migration/local
+
+logging:
+  level:
+    root: info
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      springframework:
+        jdbc:
+          core:
+            JdbcTemplate: DEBUG
+            StatementCreatorUtils: TRACE
+
+jwt:
+  access-expire-time: 864000000
+  refresh-expire-time: 864000000
+  access-token-expired-at: 24h
+  refresh-token-expired-at: 3d
