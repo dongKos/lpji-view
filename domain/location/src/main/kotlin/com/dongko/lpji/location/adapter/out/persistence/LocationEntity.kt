@@ -1,8 +1,7 @@
-package com.dongko.lpji.user.adapter.out.persistence
+package com.dongko.lpji.location.adapter.out.persistence
 
 import com.dongko.lpji.persistence.AuditBase
 import com.dongko.lpji.persistence.Identifiable
-import com.dongko.lpji.user.domain.User
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
@@ -10,18 +9,13 @@ import jakarta.persistence.Id
 import jakarta.persistence.Table
 
 @Entity
-@Table(name = "user")
-class UserEntity(
+@Table(name = "location")
+class LocationEntity(
     val name: String,
+    var pricePerSquareMeter: String,
 ) : AuditBase(),
     Identifiable<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    override val id: Long? = null
-
-    fun toUser(): User =
-        User(
-            id = identifier,
-            name = name,
-        )
+    override var id: Long? = null
 }

@@ -5,7 +5,5 @@ import com.dongko.lpji.user.application.port.`in`.command.CreateUserCommand
 data class CreateUserRequestResource(
     val name: String,
 ) {
-    fun toCommand(): CreateUserCommand {
-        return CreateUserCommand(name)
-    }
+    fun toCommand(): CreateUserCommand = CreateUserCommand(name)
 }

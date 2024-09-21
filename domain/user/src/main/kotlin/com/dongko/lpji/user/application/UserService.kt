@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service
 class UserService(
     private val userCommandPort: UserCommandPort,
     private val userQueryPort: UserQueryPort,
-) : UserQueryUseCase, UserCommandUseCase, UserReader {
+) : UserQueryUseCase,
+    UserCommandUseCase,
+    UserReader {
     override fun createUser(createUserCommand: CreateUserCommand): Long {
         // check username duplication
         userQueryPort.findUserByName(createUserCommand.name)?.let {
@@ -23,7 +25,5 @@ class UserService(
         return userCommandPort.createUser(createUserCommand.name)
     }
 
-    override fun findById(id: Long): UserDto? {
-        return userQueryPort.findById(id)?.toUserDto()
-    }
+    override fun findById(id: Long): UserDto? = userQueryPort.findById(id)?.toUserDto()
 }

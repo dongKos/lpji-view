@@ -13,7 +13,5 @@ class AuthenticationController(
     @GetMapping
     fun getUser(
         @RequestParam id: Long,
-    ): String? {
-        return authService.findUserById(id)
-    }
+    ): String? = authService.findUserById(id)
 }

@@ -7,7 +7,5 @@ import org.springframework.stereotype.Service
 class AuthService(
     private val userReader: UserReader,
 ) {
-    fun findUserById(id: Long): String? {
-        return userReader.findById(id)?.name
-    }
+    fun findUserById(id: Long): String? = userReader.findById(id)?.name
 }

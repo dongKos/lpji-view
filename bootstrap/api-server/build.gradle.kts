@@ -13,4 +13,5 @@ tasks.jar {
 dependencies {
     implementation(project(":domain:user"))
     implementation(project(":domain:authentication"))
+    implementation(project(":domain:location"))
 }

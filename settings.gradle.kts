@@ -8,4 +8,4 @@ include("common:core")
 
 include("domain:user")
 include("domain:authentication")
-findProject(":domain:authentication")?.name = "authentication"
+include("domain:location")

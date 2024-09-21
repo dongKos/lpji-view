@@ -31,10 +31,14 @@ subprojects {
     dependencies {
         implementation("org.springframework.boot:spring-boot-starter-actuator")
         implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+        implementation("org.springframework.boot:spring-boot-starter-security")
         runtimeOnly("mysql:mysql-connector-java:8.0.28")
         implementation("org.springframework.boot:spring-boot-starter-web")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+        implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+
         developmentOnly("org.springframework.boot:spring-boot-devtools")
         runtimeOnly("io.micrometer:micrometer-registry-prometheus")
 //        runtimeOnly("org.postgresql:postgresql")

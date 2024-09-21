@@ -6,10 +6,9 @@ class User(
     val id: Long,
     val name: String,
 ) {
-    fun toUserDto(): UserDto {
-        return UserDto(
+    fun toUserDto(): UserDto =
+        UserDto(
             id = id,
             name = name,
         )
-    }
 }
